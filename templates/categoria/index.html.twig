@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h2>{{ categoria.nombre }}</h2>
+        {% for articulo in categoria.articulos %}
+        <div class="articulo">
+            <h4><a href="{{  path('ver_articulo',{id:articulo.id}) }}">{{ articulo.nombre }}</a></h4>
+
+            <div class="precio_articulo">{{ articulo.precio }}</div>
+        </div>
+    {% else %}
+        No users have been found.
+    {% endfor %}
+{% endblock %}

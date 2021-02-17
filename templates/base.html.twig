@@ -2,18 +2,22 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {# Run `composer require symfony/webpack-encore-bundle`
-           and uncomment the following Encore helpers to start using Symfony UX #}
+        <title>{% block title %}PCCOMPONENTES{% endblock %}</title>
         {% block stylesheets %}
-            {#{{ encore_entry_link_tags('app') }}#}
+            <link href="{{ asset('css/estilos.css') }}" type="text/css" rel="stylesheet">
         {% endblock %}
 
         {% block javascripts %}
-            {#{{ encore_entry_script_tags('app') }}#}
+        
         {% endblock %}
     </head>
     <body>
+        <div>
+        <h1>PC COMPONENTES</h1>
+        {%  if app.user %}
+            Hola {{ app.user.nombre }} {{ app.user.apellidos }} ({{ app.user.DNI }})
+        {%  endif %}
+        </div>
         {% block body %}{% endblock %}
     </body>
 </html>

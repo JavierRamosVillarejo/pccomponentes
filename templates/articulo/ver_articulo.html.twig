@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+        <div class="articulo">
+            <h4>{{ articulo.nombre }}</h4>
+            <div class="categoria_articulo"><a href="{{ path('ver_categoria',{id:articulo.categoria.id}) }}">{{ articulo.categoria.nombre }}</a></div>
+            <div class="precio_articulo">{{ articulo.precio }}</div>
+            <p>{{ articulo.descripcion }}</p>
+        </div>
+{% endblock %}
